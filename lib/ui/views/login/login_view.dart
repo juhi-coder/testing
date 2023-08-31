@@ -11,10 +11,8 @@ class LoginView extends StatelessWidget {
     return ViewModelBuilder<LoginViewModel>.reactive(
         viewModelBuilder: () => LoginViewModel(),
         builder: (context, viewModel, child) => Scaffold(
-              appBar: AppBar(title: Text('Login View')),
-              body: Container(
-                child: Column(),
-              ),
+              appBar: AppBar(title: const Text('Login View')),
+              body: const Column(),
             ));
   }
 }
