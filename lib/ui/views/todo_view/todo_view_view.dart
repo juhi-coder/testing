@@ -19,10 +19,10 @@ class _TodoViewState extends State<TodoView> {
       onModelReady: (viewModel) => viewModel.getTodos(),
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
-          title: Text('Todo Data'),
+          title: const Text('Todo Data'),
         ),
         body: viewModel.isBusy
-            ? Center(
+            ? const Center(
                 child: CircularProgressIndicator(),
               )
             : ListView.builder(
@@ -31,7 +31,8 @@ class _TodoViewState extends State<TodoView> {
                   final todo = viewModel.todos[index];
                   return Card(
                     elevation: 2,
-                    margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 16),
                     color: Colors.pink[100],
                     child: ListTile(
                       title: Column(
