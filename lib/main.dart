@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_services/stacked_services.dart';
 import 'package:testing/app/app.bottomsheets.dart';
 import 'package:testing/app/app.dialogs.dart';
 import 'package:testing/app/app.locator.dart';
-import 'package:testing/app/app.router.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:testing/ui/views/Example/exampleView.dart';
+
+import 'app/app.router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,12 +21,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.todoView,
+      initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
         StackedService.routeObserver,
       ],
+      // home: ExampleView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:testing/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:testing/ui/dialogs/info_alert/info_alert_dialog.dart';
+import 'package:testing/ui/views/home/homeview.dart';
 import 'package:testing/ui/views/login/login_view.dart';
 import 'package:testing/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -10,6 +11,8 @@ import 'package:testing/ui/views/todo_view/todo_view_view.dart';
 
 import '../services/api_service.dart';
 
+import 'package:testing/services/authentication_service.dart';
+
 // @stacked-import
 //
 @StackedApp(
@@ -19,6 +22,7 @@ import '../services/api_service.dart';
     MaterialRoute(page: TextReverseView),
     MaterialRoute(page: LoginView),
     MaterialRoute(page: TodoView),
+    MaterialRoute(page: HomeView),
 // @stacked-route
   ],
   dependencies: [
@@ -26,7 +30,8 @@ import '../services/api_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: ApiService),
-    // @stacked-service
+    LazySingleton(classType: AuthenticationService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
